@@ -5,7 +5,9 @@
  * Contribution Management (Ajo/Thrift) API
  * OpenAPI spec version: 0.1.0
  */
+import type { ListMembersStatus } from './listMembersStatus';
 
-export interface HealthStatus {
-  status: string;
-}
+export type ListMembersParams = {
+search?: string;
+status?: ListMembersStatus;
+};
