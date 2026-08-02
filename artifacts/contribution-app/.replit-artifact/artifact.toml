@@ -1,6 +1,7 @@
 kind = "web"
 previewPath = "/"
-title = "Contribution Manager"
+title = "AjoTrack"
+description = "A digital passbook app for cooperative/Ajo/Thrift savings societies. Members log in to view their own contribution history and running balance. Admins manage all members, record credit/debit transactions, and export financial reports."
 version = "1.0.0"
 id = "artifacts/contribution-app"
 router = "path"
