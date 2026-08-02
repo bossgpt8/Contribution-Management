@@ -1,0 +1,2 @@
+- [Codegen post-patch](codegen-post-patch.md) — after every Orval codegen run, two manual patches must be applied or the build breaks
+- [Session type augmentation](session-type-aug.md) — express-session types must NOT be imported in app.ts; use tsconfig include instead

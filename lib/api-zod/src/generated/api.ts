@@ -29,7 +29,7 @@ export const MemberLoginBody = zod.object({
 
 export const MemberLoginResponse = zod.object({
   "role": zod.enum(['member', 'admin']),
-  "id": zod.int(),
+  "id": zod.number().int(),
   "name": zod.string().nullish(),
   "contributionNumber": zod.string().nullish(),
   "username": zod.string().nullish()
@@ -50,7 +50,7 @@ export const AdminLoginBody = zod.object({
 
 export const AdminLoginResponse = zod.object({
   "role": zod.enum(['member', 'admin']),
-  "id": zod.int(),
+  "id": zod.number().int(),
   "name": zod.string().nullish(),
   "contributionNumber": zod.string().nullish(),
   "username": zod.string().nullish()
@@ -70,7 +70,7 @@ export const LogoutResponse = zod.object({
  */
 export const GetMeResponse = zod.object({
   "role": zod.enum(['member', 'admin']),
-  "id": zod.int(),
+  "id": zod.number().int(),
   "name": zod.string().nullish(),
   "contributionNumber": zod.string().nullish(),
   "username": zod.string().nullish()
@@ -86,7 +86,7 @@ export const ListMembersQueryParams = zod.object({
 })
 
 export const ListMembersResponseItem = zod.object({
-  "id": zod.int(),
+  "id": zod.number().int(),
   "contributionNumber": zod.string(),
   "fullName": zod.string(),
   "phone": zod.string().nullish(),
@@ -118,7 +118,7 @@ export const CreateMemberBody = zod.object({
 })
 
 export const CreateMemberResponse = zod.object({
-  "id": zod.int(),
+  "id": zod.number().int(),
   "contributionNumber": zod.string(),
   "fullName": zod.string(),
   "phone": zod.string().nullish(),
@@ -139,7 +139,7 @@ export const GetMemberParams = zod.object({
 })
 
 export const GetMemberResponse = zod.object({
-  "id": zod.int(),
+  "id": zod.number().int(),
   "contributionNumber": zod.string(),
   "fullName": zod.string(),
   "phone": zod.string().nullish(),
@@ -172,7 +172,7 @@ export const UpdateMemberBody = zod.object({
 })
 
 export const UpdateMemberResponse = zod.object({
-  "id": zod.int(),
+  "id": zod.number().int(),
   "contributionNumber": zod.string(),
   "fullName": zod.string(),
   "phone": zod.string().nullish(),
@@ -209,8 +209,8 @@ export const ListMemberTransactionsQueryParams = zod.object({
 })
 
 export const ListMemberTransactionsResponseItem = zod.object({
-  "id": zod.int(),
-  "memberId": zod.int(),
+  "id": zod.number().int(),
+  "memberId": zod.number().int(),
   "date": zod.coerce.date(),
   "description": zod.string(),
   "debit": zod.number(),
@@ -240,8 +240,8 @@ export const CreateTransactionBody = zod.object({
 })
 
 export const CreateTransactionResponse = zod.object({
-  "id": zod.int(),
-  "memberId": zod.int(),
+  "id": zod.number().int(),
+  "memberId": zod.number().int(),
   "date": zod.coerce.date(),
   "description": zod.string(),
   "debit": zod.number(),
@@ -269,8 +269,8 @@ export const UpdateTransactionBody = zod.object({
 })
 
 export const UpdateTransactionResponse = zod.object({
-  "id": zod.int(),
-  "memberId": zod.int(),
+  "id": zod.number().int(),
+  "memberId": zod.number().int(),
   "date": zod.coerce.date(),
   "description": zod.string(),
   "debit": zod.number(),
@@ -294,8 +294,8 @@ export const DeleteTransactionResponse = zod.void()
  * @summary Get overall summary stats (admin only)
  */
 export const GetReportSummaryResponse = zod.object({
-  "totalMembers": zod.int(),
-  "activeMembers": zod.int(),
+  "totalMembers": zod.number().int(),
+  "activeMembers": zod.number().int(),
   "totalContributions": zod.number(),
   "totalWithdrawals": zod.number(),
   "netBalance": zod.number()
@@ -312,8 +312,8 @@ export const GetRecentTransactionsQueryParams = zod.object({
 })
 
 export const GetRecentTransactionsResponseItem = zod.object({
-  "id": zod.int(),
-  "memberId": zod.int(),
+  "id": zod.number().int(),
+  "memberId": zod.number().int(),
   "memberName": zod.string(),
   "contributionNumber": zod.string(),
   "date": zod.coerce.date(),
